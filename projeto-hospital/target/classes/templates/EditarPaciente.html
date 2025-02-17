@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Paciente</title>
+</head>
+<body>
+    <h1>Editar Paciente</h1>
+    <form th:action="@{/pacientes/atualizar}" th:object="${paciente}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <label for="nome">Nome:</label>
+        <input type="text" th:field="*{nome}" id="nome" required>
+        <br>
+        <label for="cpf">CPF:</label>
+        <input type="text" th:field="*{cpf}" id="cpf" required>
+        <br>
+        <label for="telefone">Telefone:</label>
+        <input type="text" th:field="*{telefone}" id="telefone" required>
+        <br>
+        <label for="medico">Médico:</label>
+        <select th:field="*{medico}" id="medico" required>
+            <option th:each="medico : ${medicos}" th:value="${medico.id}" th:text="${medico.nome}"></option>
+        </select>
+        <br>
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

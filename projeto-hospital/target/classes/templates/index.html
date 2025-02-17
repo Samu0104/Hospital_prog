@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastros</title>
+</head>
+<body>
+    <h1>Cadastros</h1>
+    <a th:href="@{/medico/listar/{id}(id=${medico.id})}">listar Medico</a>
+    <a th:href="@{/medico/listar/{id}(id=${paciente.id})}">Listar Paciente</a>
+</body>
+</html>
